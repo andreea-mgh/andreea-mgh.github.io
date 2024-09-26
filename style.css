@@ -53,6 +53,8 @@ nav {
 
 main {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 2rem;
 }
 
@@ -61,10 +63,17 @@ main {
     margin: 1rem;
     padding: 1rem;
     width: 50%;
+    max-width: 300px;
     /* background-color: var(--background-color-2); */
 }
 
 h1 {
     font-size: 2rem;
-    color: var(--accent-color)
+    color: var(--accent-color);
+}
+
+#laptop-svg {
+    /* fill: var(--accent-color); */
+    height: 10rem;
+    max-width: 500px;
 }
