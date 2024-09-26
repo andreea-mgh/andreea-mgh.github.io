@@ -96,11 +96,32 @@ h1.title {
     max-width: 300px;
 }
 
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--accent-color);
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
     .description {
         width: 100%;
+    }
+    
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-right li {
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .hamburger {
+        display: block;
     }
 }
