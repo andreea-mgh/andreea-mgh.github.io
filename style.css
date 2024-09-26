@@ -83,6 +83,7 @@ h2, h3 {
 h1.title {
     font-size: 3rem;
     text-align: center;
+    margin: 2rem;
 }
 
 #laptop-svg {
@@ -93,4 +94,13 @@ h1.title {
 
 .screenshot {
     max-width: 300px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .description {
+        width: 100%;
+    }
 }
