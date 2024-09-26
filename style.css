@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 :root {
     --background-color-1: #303030;
@@ -12,12 +13,13 @@
 body {
     background-color: var(--background-color-1);
     color: var(--text-color-1);
-    font-family: "Share Tech Mono", monospace;
+    font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 0;
 }
 
 nav {
+    font-family: "Share Tech Mono", monospace;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +53,7 @@ nav {
     background-color: var(--background-color-1);
 }
 
-main {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,12 +70,27 @@ main {
 }
 
 h1 {
+    font-family: "Share Tech Mono", monospace;
     font-size: 2rem;
     color: var(--accent-color);
+}
+
+h2, h3 {
+    font-family: "Share Tech Mono", monospace;
+    color: var(--text-color-2);
+}
+
+h1.title {
+    font-size: 3rem;
+    text-align: center;
 }
 
 #laptop-svg {
     /* fill: var(--accent-color); */
     height: 10rem;
     max-width: 500px;
+}
+
+.screenshot {
+    max-width: 300px;
 }
