@@ -1,7 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 :root {
     --background-color-1: #303030;
     --background-color-2: #404038;
     --text-color-1: #cccccc;
     --text-color-2: #ffffff;
     --accent-color: #ffdd00;
+}
+
+body {
+    background-color: var(--background-color-1);
+    color: var(--text-color-1);
+    font-family: "Share Tech Mono", monospace;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color-2);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.navbar-left {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.navbar-right {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-right li a {
+    color: var(--text-color-2);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.navbar-right li a:hover {
+    color: var(--accent-color);
+    background-color: var(--background-color-1);
 }
