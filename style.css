@@ -99,7 +99,7 @@ h1.title {
 
 .hamburger {
     display: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     color: var(--accent-color);
 }
