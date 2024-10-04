@@ -8,11 +8,11 @@
 <body>
     <nav>
         <div class="navbar-left">andreea megherlich</div>
-        <div class="hamburger">&#9776;</div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <ul class="navbar-right">
             <li><a href="index.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
     </nav>
     <div class="container">
@@ -23,5 +23,13 @@
         <!-- <object type="image/svg+xml" data="res/laptop.svg" id="laptop-svg"></object> -->
         <img src="res/laptop.svg" id="laptop-svg">
     </div>
+
+    
+    <script>
+        function toggleMenu() {
+            var x = document.querySelector(".navbar-right");
+            x.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
