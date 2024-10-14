@@ -3,42 +3,49 @@
         "title": "currency exchange rates",
         "description": "I used an API to query the current exchange rates for a few currencies I use often.",
         "image": "res/screenshots/currency.png",
-        "link": "https://github.com/andreea-mgh/site_currency"
+        "link": "/site_currency",
+        "repo_link": "https://github.com/andreea-mgh/site_currency"
     },
     {
         "title": "tip calculator",
         "description": "For this page I used JavaScript to calculate tip amounts and percentages.",
         "image": "res/screenshots/tips.png",
-        "link": "https://github.com/andreea-mgh/site_tipcalculator"
+        "link": "/site_tipcalculator",
+        "repo_link": "https://github.com/andreea-mgh/site_tipcalculator"
     },
     {
         "title": "responsive menu",
         "description": "A responsive multiple-level navbar/hamburger menu made in JavaScript.",
         "image": "res/screenshots/menu.png",
-        "link": "https://github.com/andreea-mgh/site_menu"
+        "link": "/site_menu",
+        "repo_link": "https://github.com/andreea-mgh/site_menu"
     },
     {
         "title": "coming soon countdown",
         "description": "This page features a coming soon counter with a fixed date, made with flexbox.",
         "image": "res/screenshots/comingsoon.png",
-        "link": "https://github.com/andreea-mgh/site_comingsoon"
+        "link": "/site_comingsoon",
+        "repo_link": "https://github.com/andreea-mgh/site_comingsoon"
     },
     {
         "title": "flexbox/grid layout",
         "description": "This page features 2 identical layouts, one made with flexbox and the other one with grid layout. The page features a button to switch between the two stylesheets.",
         "image": "res/screenshots/layout.png",
-        "link": "https://github.com/andreea-mgh/site_layout"
+        "link": "/site_layout",
+        "repo_link": "https://github.com/andreea-mgh/site_layout"
     },
     {
         "title": "back to top button",
         "description": "I used this page to test a basic back-to-top button.",
         "image": "res/screenshots/backtotop.png",
-        "link": "https://github.com/andreea-mgh/site_backtotop"
+        "link": "/site_backtotop",
+        "repo_link": "https://github.com/andreea-mgh/site_backtotop"
     },
     {
         "title": "html/css page for a marathon",
         "description": "In this example I use multiple HTML tags and CSS properties.",
         "image": "res/screenshots/marathon.png",
-        "link": "https://github.com/andreea-mgh/site_maraton"
+        "link": "/site_maraton",
+        "repo_link": "https://github.com/andreea-mgh/site_maraton"
     }    
 ]

@@ -52,12 +52,14 @@
                 image.src = project.image;
                 image.classList.add('screenshot');
 
-
-                
+                const repoLink = document.createElement('a');
+                repoLink.href = project.repo_link;
+                repoLink.textContent = 'View on GitHub';    
 
                 link.appendChild(image);
 
                 projectDiv.appendChild(descriptionDiv);
+                descriptionDiv.appendChild(repoLink);
                 projectDiv.appendChild(link);
 
                 container.appendChild(projectDiv);
