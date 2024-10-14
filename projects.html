@@ -15,49 +15,12 @@
         </ul>
     </nav>
     <h1 class="title">frontend projects</h1>
-    
-    <!-- <div class="container">
-        <div class="description">
-            <h2>tip calculator</h2>
-            <p>For this page I used JavaScript to calculate tip amounts and percentages.</p>
-        </div>
-        <a href="/site_tipcalculator"><img src="res/screenshots/tips.png" class="screenshot"></a>
-    </div>
-    <div class="container">
-        <div class="description">
-            <h2>coming soon countdown</h2>
-            <p>This page features a coming soon counter with a fixed date, made with flexbox.</p>
-        </div>
-        <a href="/site_comingsoon"><img src="res/screenshots/comingsoon.png" class="screenshot"></a>
-    </div>
-    <div class="container">
-        <div class="description">
-            <h2>flexbox/grid layout</h2>
-            <p>This page features 2 identical layouts, one made with flexbox and the other one with grid layout. The page features a button to switch between the two stylesheets.</p>
-        </div>
-        <a href="/site_layout"><img src="res/screenshots/layout.png" class="screenshot"></a>
-    </div>
-    <div class="container">
-        <div class="description">
-            <h2>back to top button</h2>
-            <p>I used this page to test a basic back-to-top button.</p>
-        </div>
-        <a href="/site_backtotop"><img src="res/screenshots/backtotop.png" class="screenshot"></a>
-    </div>
-    <div class="container">
-        <div class="description">
-            <h2>html/css page for a marathon</h2>
-            <p>In this example I use multiple HTML tags and CSS properties.</p>
-        </div>
-        <a href="/site_maraton"><img src="res/screenshots/marathon.png" class="screenshot"></a>
-    </div> -->
-
 
     <div id="projects-container"></div>
 
     <script>
         function toggleMenu() {
-            var x = document.getElementById("navbar-right");
+            var x = document.querySelector(".navbar-right");
             x.classList.toggle("show");
         }
 
@@ -104,11 +67,5 @@
         document.addEventListener('DOMContentLoaded', loadProjects);
     </script>
 
-    <!-- <script>
-        function toggleMenu() {
-            var x = document.querySelector(".navbar-right");
-            x.classList.toggle("show");
-        }
-    </script> -->
 </body>
 </html>
