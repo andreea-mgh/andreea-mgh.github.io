@@ -1,0 +1,32 @@
+[
+    {
+        "title": "tip calculator",
+        "description": "For this page I used JavaScript to calculate tip amounts and percentages.",
+        "image": "res/screenshots/tips.png",
+        "link": "https://github.com/andreea-mgh/site_tipcalculator"
+    },
+    {
+        "title": "coming soon countdown",
+        "description": "This page features a coming soon counter with a fixed date, made with flexbox.",
+        "image": "res/screenshots/comingsoon.png",
+        "link": "https://github.com/andreea-mgh/site_comingsoon"
+    },
+    {
+        "title": "flexbox/grid layout",
+        "description": "This page features 2 identical layouts, one made with flexbox and the other one with grid layout. The page features a button to switch between the two stylesheets.",
+        "image": "res/screenshots/layout.png",
+        "link": "https://github.com/andreea-mgh/site_layout"
+    },
+    {
+        "title": "back to top button",
+        "description": "I used this page to test a basic back-to-top button.",
+        "image": "res/screenshots/backtotop.png",
+        "link": "https://github.com/andreea-mgh/site_backtotop"
+    },
+    {
+        "title": "html/css page for a marathon",
+        "description": "In this example I use multiple HTML tags and CSS properties.",
+        "image": "res/screenshots/marathon.png",
+        "link": "https://github.com/andreea-mgh/site_maraton"
+    }    
+]

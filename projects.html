@@ -16,7 +16,7 @@
     </nav>
     <h1 class="title">frontend projects</h1>
     
-    <div class="container">
+    <!-- <div class="container">
         <div class="description">
             <h2>tip calculator</h2>
             <p>For this page I used JavaScript to calculate tip amounts and percentages.</p>
@@ -50,14 +50,65 @@
             <p>In this example I use multiple HTML tags and CSS properties.</p>
         </div>
         <a href="/site_maraton"><img src="res/screenshots/marathon.png" class="screenshot"></a>
-    </div>
+    </div> -->
 
+
+    <div id="projects-container"></div>
 
     <script>
+        function toggleMenu() {
+            var x = document.getElementById("navbar-right");
+            x.classList.toggle("show");
+        }
+
+        async function loadProjects() {
+            const response = await fetch('projects.json');
+            const projects = await response.json();
+            const container = document.getElementById('projects-container');
+
+            projects.forEach(project => {
+                const projectDiv = document.createElement('div');
+                projectDiv.classList.add('container');
+
+                const descriptionDiv = document.createElement('div');
+                descriptionDiv.classList.add('description');
+
+                const title = document.createElement('h2');
+                title.textContent = project.title;
+
+                const description = document.createElement('p');
+                description.textContent = project.description;
+
+                descriptionDiv.appendChild(title);
+                descriptionDiv.appendChild(description);
+
+                const link = document.createElement('a');
+                link.href = project.link;
+
+                const image = document.createElement('img');
+                image.src = project.image;
+                image.classList.add('screenshot');
+
+
+                
+
+                link.appendChild(image);
+
+                projectDiv.appendChild(descriptionDiv);
+                projectDiv.appendChild(link);
+
+                container.appendChild(projectDiv);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadProjects);
+    </script>
+
+    <!-- <script>
         function toggleMenu() {
             var x = document.querySelector(".navbar-right");
             x.classList.toggle("show");
         }
-    </script>
+    </script> -->
 </body>
 </html>
