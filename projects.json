@@ -1,5 +1,11 @@
 [
     {
+        "title": "currency exchange rates",
+        "description": "I used an API to query the current exchange rates for a few currencies I use ofter.",
+        "image": "res/screenshots/currency.png",
+        "link": "https://github.com/andreea-mgh/site_currency"
+    },
+    {
         "title": "tip calculator",
         "description": "For this page I used JavaScript to calculate tip amounts and percentages.",
         "image": "res/screenshots/tips.png",
