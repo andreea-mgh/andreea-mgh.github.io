@@ -1,0 +1,54 @@
+[
+    {
+        "cod": "QZCB1C",
+        "title": "Minecraft Scripting 1",
+        "description": "Aceasta este o recapitulare a primelor instrucțiuni de programare în Minecraft. <strong>Poți folosi notițele de la clasă din fișierul Word pentru a rezolva testul!</strong>",
+        "questions": [
+            {
+                "question": "Dacă jucătorul este la poziția <strong>x=10, y=50, z=20</strong> și rulează comanda următoare, unde va fi plasat blocul de piatră?<div class=\"code-block\">setblock ~ ~10 ~ stone</div>",
+                "options": [
+                    "x=20, y=60, z=30",
+                    "x=10, y=50, z=20",
+                    "x=10, y=60, z=20",
+                    "x=0, y=10, z=0"
+                ],
+                "answer": 2,
+                "explanation": "Coordonatele ~ ~ ~ se numesc <em>coordonate relative</em> și reprezintă locul unde a fost rulată comanda, iar ~10 pe axa y înseamnă că blocul va fi plasat cu 10 blocuri mai sus față de y=50."
+            },
+            {
+                "question": "Ce lipsește din instrucțiunea următoare în locul lui ___?<div class=\"code-block\">execute if ___ setblock ~ ~5 ~ air</div>",
+                "options": [
+                    "condiție",
+                    "target",
+                    "comandă",
+                    "nimic"
+                ],
+                "answer": 0,
+                "explanation": "Mereu după <span class=\"code-inline\">execute if</span> trebuie să urmeze o condiție care să fie verificată."
+            },
+            {
+                "question": "Cum pot da câte un diamant <strong>tuturor</strong> jucătorilor la o distanță de <strong>maxim 10 blocuri</strong> de mine?",
+                "options": [
+                    "give @a[distance=10] diamond",
+                    "give @a[distance=..10] diamond",
+                    "give @p[distance=10..] diamond",
+                    "give @p[distance=..10] diamond"
+                ],
+                "answer": 1,
+                "explanation": "În target selector trebuie să folosim <span class=\"code-inline\">distance=..10</span> ca să includem jucătorii la o distanță de până la 10 blocuri. Selectorul <span class=\"code-inline\">@a</span> se referă la toți jucătorii, iar <span class=\"code-inline\">@p</span> se referă la un singur jucător."
+            },
+            {
+                "question": "Ne-au invadat scheleții! Cum scap de toți cu o singură comandă?",
+                "options": [
+                    "kill @e[type=skeleton]",
+                    "kill @p[type=skeleton]",
+                    "kill @s[type=skeleton]",
+                    "kill @a[type=skeleton]"
+                ],
+                "answer": 0,
+                "explanation": "Selectorul <span class=\"code-inline\">@e</span> se referă la toate creaturile din lume, iar <span class=\"code-inline\">type=skeleton</span> specifică tipul de creatură care să dispară. Selectorii <span class=\"code-inline\">@p</span> și <span class=\"code-inline\">@a</span> se referă la jucători, nu la creaturi, iar <span class=\"code-inline\">@s</span> se referă la cine a rulat comanda."
+            }
+        ]
+
+    }
+]

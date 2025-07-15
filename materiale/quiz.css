@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root {
+    --background-color-1: #e2f6f2;
+    --background-color-2: #aae8c2;
+    /* --background-color-3: #55936d; */
+    --text-color-1: #2b2240;
+    --accent-color: rgb(87, 78, 151);
+
+    --code-bg: #cafadc;
+    --code-text: #333;
+}
+
+body {
+    min-height: 98vh;
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    background-color: var(--background-color-1);
+    color: var(--text-color-1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2 {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.quiz-container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: var(--background-color-2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+input[type="text"] {
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    height: 1.5rem;
+    width: 8rem;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 1.5rem;
+}
+
+.question {
+    width: 100%;
+}
+
+.code-block {
+    display: block;
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.code-inline {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+button.correct {
+    background-color: #4CAF50;
+}
+
+button.incorrect {
+    background-color: #d56447;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid var(--accent-color);
+    margin: 20px 0;
+}
+
+.question ul {
+    padding: 0;
+    margin: 1em 0;
+}
+
+.question li {
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.question li input[type="radio"] {
+    margin-right: 10px;
+    scale: 1.2;
+    accent-color: var(--accent-color);
+}
