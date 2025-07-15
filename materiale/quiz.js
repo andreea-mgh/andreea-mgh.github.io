@@ -19,7 +19,7 @@ function showResults(correctAnswers, totalQuestions) {
         message = `<strong style="color:#275b37">Felicitări! Ai răspuns corect la toate întrebările!</strong>`;
     } else {
         message = `<p>Poți încerca din nou testul dacă vrei punctaj mai mare.</p>
-        <button id="retry-quiz">Apasă aici pentru a reseta testul</button>
+        <button id="retry-quiz">Resetează testul</button>
         <br>`;
     }
 
@@ -159,16 +159,6 @@ else {
         const visitedContainer = document.createElement('div');
         visitedContainer.classList.add('visited-container');
         visitedContainer.innerHTML = '<p>Recente:</p>';
-        // const ul = document.createElement('ul');
-        // visitedIds.forEach(id => {
-        //     const li = document.createElement('li');
-        //     li.textContent = id;
-        //     li.addEventListener('click', () => {
-        //         window.location.href = `/materiale/test.html?code=${id}`;
-        //     });
-        //     ul.appendChild(li);
-        // });
-        // visitedContainer.appendChild(ul);
 
         visitedIds.forEach(id => {
             const idcontainer = document.createElement('div');
