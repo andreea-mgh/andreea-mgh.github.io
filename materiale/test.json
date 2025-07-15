@@ -35,7 +35,7 @@
                     "give @p[distance=..10] diamond"
                 ],
                 "answer": 1,
-                "explanation": "În target selector trebuie să folosim <span class=\"code-inline\">distance=..10</span> ca să includem jucătorii la o distanță de până la 10 blocuri. Selectorul <span class=\"code-inline\">@a</span> se referă la toți jucătorii, iar <span class=\"code-inline\">@p</span> se referă la un singur jucător."
+                "explanation": "În target selector trebuie să folosim <span class=\"code-inline\">distance=..10</span> ca să includem jucătorii la o distanță de până la 10 blocuri. Selectorul <span class=\"code-inline\">@a</span> se referă la toți jucătorii care respectă condiția, iar <span class=\"code-inline\">@p</span> se referă la un singur jucător."
             },
             {
                 "question": "Ne-au invadat scheleții! Cum scap de toți cu o singură comandă?",
