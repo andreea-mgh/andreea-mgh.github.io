@@ -1,4 +1,9 @@
+/* Lexend */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+/* Winky Sans */
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+/* Gabarito */
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
 
 :root {
     --background-color-1: #e2f6f2;
@@ -14,8 +19,7 @@
 
 body {
     min-height: 98vh;
-    /* font-family: Arial, sans-serif; */
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Gabarito', sans-serif;
     font-size: 18px;
     background-color: var(--background-color-1);
     color: var(--text-color-1);
@@ -69,6 +73,11 @@ button {
     width: 100%;
 }
 
+.question-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .code-block {
     display: block;
     background-color: var(--code-bg);
@@ -120,3 +129,89 @@ hr {
     scale: 1.2;
     accent-color: var(--accent-color);
 }
+
+/* Results container styles */
+.results-container {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--background-color-1);
+    border-radius: 8px;
+    border: 2px solid var(--accent-color);
+    overflow: visible;
+
+    /* min-height: 500px; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.results-container p {
+    margin: 10px 0;
+}
+
+button#retry-quiz {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+    box-sizing: content-box;
+}
+
+/* 
+.results-container h2 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+.results-container .score {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+
+.results-container .percentage {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.results-container .message {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.results-container .message.excellent {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.results-container .message.good {
+    background-color: #8BC34A;
+    color: white;
+}
+
+.results-container .message.okay {
+    background-color: #FFC107;
+    color: var(--text-color-1);
+}
+
+.results-container .message.needs-improvement {
+    background-color: #FF5722;
+    color: white;
+}
+
+.correct-answer {
+    color: var(--test);
+    font-weight: bold;
+    margin: 10px 0;
+} */

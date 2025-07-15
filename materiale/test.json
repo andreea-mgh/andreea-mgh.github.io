@@ -13,7 +13,7 @@
                     "x=0, y=10, z=0"
                 ],
                 "answer": 2,
-                "explanation": "Coordonatele ~ ~ ~ se numesc <em>coordonate relative</em> și reprezintă locul unde a fost rulată comanda, iar ~10 pe axa y înseamnă că blocul va fi plasat cu 10 blocuri mai sus față de y=50."
+                "explanation": "Coordonatele ~ ~ ~ se numesc <em>coordonate relative</em> și reprezintă locul unde a fost rulată comanda (în cazul nostru <strong>x=10, y=50, z=20</strong>), iar ~10 pe axa y înseamnă că blocul va fi plasat cu 10 blocuri mai sus față de y=50."
             },
             {
                 "question": "Ce lipsește din instrucțiunea următoare în locul lui ___?<div class=\"code-block\">execute if ___ setblock ~ ~5 ~ air</div>",
@@ -49,7 +49,7 @@
                 "explanation": "Selectorul <span class=\"code-inline\">@e</span> se referă la toate creaturile din lume, iar <span class=\"code-inline\">type=skeleton</span> specifică tipul de creatură care să dispară. Selectorii <span class=\"code-inline\">@p</span> și <span class=\"code-inline\">@a</span> se referă la jucători, nu la creaturi, iar <span class=\"code-inline\">@s</span> se referă la cine a rulat comanda."
             },
             {
-                "question": "Am scris comanda următoare într-un bloc de comandă necondiționat: <div class=\"code-block\">execute if block 10 64 10 bricks run say Salut!</div> Ce trebuie să fac cu blocul de comandă ca să testeze la infinit condiția?",
+                "question": "Am scris o comandă <span class=\"code-inline\">execute</span> într-un bloc de comandă necondiționat: <div class=\"code-block\">execute if block 10 64 10 bricks run say Salut!</div> Ce trebuie să fac cu blocul de comandă ca să testeze la infinit condiția?",
                 "options": [
                     "schimb tipul în <span style=\"color:#833c09\">impulse</span>",
                     "schimb tipul în <span style=\"color:#275b37\">chain</span>",

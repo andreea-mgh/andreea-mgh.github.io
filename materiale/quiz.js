@@ -6,6 +6,43 @@ const loadingMessage = document.createElement('p');
 loadingMessage.textContent = 'Se încarcă...';
 document.querySelector('.quiz-container').appendChild(loadingMessage);
 
+
+function showResults(correctAnswers, totalQuestions) {
+    const resultsDiv = document.createElement('div');
+    resultsDiv.classList.add('results-container');
+    
+    const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+
+    let message = '';
+    
+    if (correctAnswers === totalQuestions) {
+        message = `<strong style="color:#275b37">Felicitări! Ai răspuns corect la toate întrebările!</strong>`;
+    } else {
+        message = `<p>Poți încerca din nou testul dacă vrei punctaj mai mare.</p>
+        <button id="retry-quiz">Apasă aici pentru a reseta testul</button>
+        <br>`;
+    }
+
+    resultsDiv.innerHTML = `
+        <p>Punctaj: <strong>${correctAnswers}/${totalQuestions}</strong> (${percentage}%)</p>
+        ${message}
+    `;
+
+    const retryButton = resultsDiv.querySelector('#retry-quiz');
+    if (retryButton) {
+        retryButton.addEventListener('click', () => {
+
+            window.location.href = `/materiale/test.html?code=${quizId}`;
+        });
+    }
+    
+    document.querySelector('.quiz-container').appendChild(resultsDiv);
+    
+    resultsDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+
 const params = new URLSearchParams(window.location.search);
 const quizId = params.get("code");
 
@@ -17,6 +54,12 @@ if (quizId) {
             const quiz = data.find(q => q.cod === quizId);
             if (quiz) {
                 quizContainer.innerHTML = `<h1>${quiz.title}</h1><p>${quiz.description}</p>`;
+                
+                // Track quiz progress
+                let correctAnswers = 0;
+                let answeredQuestions = 0;
+                const totalQuestions = quiz.questions.length;
+                
                 quiz.questions.forEach((question, index) => {
                     const questionContainer = document.createElement('div');
                     questionContainer.classList.add('question-container');
@@ -40,7 +83,10 @@ if (quizId) {
                         const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
                         if (selectedOption) {
                             const answerIndex = parseInt(selectedOption.value);
+                            answeredQuestions++;
+                            
                             if (answerIndex === question.answer) {
+                                correctAnswers++;
                                 submitButton.classList.add('correct');
                                 submitButton.textContent = 'Corect!';
                             } else {
@@ -55,12 +101,17 @@ if (quizId) {
                             const explanation = submitButton.nextElementSibling;
                             explanation.style.display = 'block';
                             submitButton.disabled = true;
+                            
+                            // verifica finalizarea quizului
+                            if (answeredQuestions === totalQuestions) {
+                                showResults(correctAnswers, totalQuestions);
+                            }
                         } else {
-                            alert('Please select an answer.');
+                            alert('Selectează un răspuns.');
                         }
                     });
                 });
-                
+
                 loadingMessage.remove();
             } else {
                 quizContainer.innerHTML = '<p>Quiz not found.</p>';
