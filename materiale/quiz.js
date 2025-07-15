@@ -42,9 +42,16 @@ function showResults(correctAnswers, totalQuestions) {
 }
 
 
-
 const params = new URLSearchParams(window.location.search);
 const quizId = params.get("code");
+
+// salveaza cod
+let c = quizId ? quizId.toUpperCase() : null;
+let visitedIds = JSON.parse(localStorage.getItem('visitedQuizIds') || '[]');
+if (c && !visitedIds.includes(c)) {
+    visitedIds.push(c.toUpperCase());
+    localStorage.setItem('visitedQuizIds', JSON.stringify(visitedIds));
+}
 
 if (quizId) {
     fetch(`/materiale/test.json`)
@@ -53,6 +60,8 @@ if (quizId) {
             const quizContainer = document.querySelector('.quiz-container');
             const quiz = data.find(q => q.cod.toUpperCase() === quizId.toUpperCase());
             if (quiz) {
+                // page title
+                document.title = `${quiz.title}`;
                 quizContainer.innerHTML = `<h1>${quiz.title}</h1><p>${quiz.description}</p>`;
                 
                 // Track quiz progress
@@ -121,23 +130,56 @@ if (quizId) {
 }
 else {
     const quizContainer = document.querySelector('.quiz-container');
-    quizContainer.style.flexDirection = 'row';
-    quizContainer.style.justifyContent = 'center';
-    quizContainer.style.alignItems = 'center';
-    quizContainer.innerHTML = '<p>Scrie codul profesoarei aici:  </p>';
+    // quizContainer.style.flexDirection = 'row';
+    // quizContainer.style.justifyContent = 'center';
+    // quizContainer.style.alignItems = 'center';
+
+    const codeinput = document.createElement('div');
+    codeinput.classList.add('cod');
+
+    codeinput.innerHTML = '<p>Scrie codul profesoarei aici:  </p>';
     const input = document.createElement('input');
     input.type = 'text';
-    quizContainer.appendChild(input);
-    quizContainer.appendChild(document.createElement('br'));
+    codeinput.appendChild(input);
+    // codeinput.appendChild(document.createElement('br'));
     const button = document.createElement('button');
     button.textContent = 'Go';
     button.addEventListener('click', () => {
         const code = input.value.trim();
         if (code) {
             window.location.href = `/materiale/test.html?code=${code}`;
-        } else {
-            quizContainer.innerHTML = '<p>Please enter a valid code.</p>';
         }
-    }    );
-    quizContainer.appendChild(button);
+    });
+    codeinput.appendChild(button);
+    quizContainer.appendChild(codeinput);
+
+    // show visited quizzes
+    const visitedIds = JSON.parse(localStorage.getItem('visitedQuizIds') || '[]');
+    if (visitedIds.length > 0) {
+        const visitedContainer = document.createElement('div');
+        visitedContainer.classList.add('visited-container');
+        visitedContainer.innerHTML = '<p>Recente:</p>';
+        // const ul = document.createElement('ul');
+        // visitedIds.forEach(id => {
+        //     const li = document.createElement('li');
+        //     li.textContent = id;
+        //     li.addEventListener('click', () => {
+        //         window.location.href = `/materiale/test.html?code=${id}`;
+        //     });
+        //     ul.appendChild(li);
+        // });
+        // visitedContainer.appendChild(ul);
+
+        visitedIds.forEach(id => {
+            const idcontainer = document.createElement('div');
+            idcontainer.classList.add('visited-id');
+            idcontainer.textContent = id;
+            idcontainer.addEventListener('click', () => {
+                window.location.href = `/materiale/test.html?code=${id}`;
+            });
+            visitedContainer.appendChild(idcontainer);
+        });
+        quizContainer.appendChild(visitedContainer);
+    }
+    loadingMessage.remove();
 }

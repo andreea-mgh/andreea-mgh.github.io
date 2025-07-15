@@ -69,6 +69,13 @@ button {
     height: 1.5rem;
 }
 
+.cod {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .question {
     width: 100%;
 }
@@ -165,53 +172,17 @@ button#retry-quiz {
     box-sizing: content-box;
 }
 
-/* 
-.results-container h2 {
-    margin-top: 0;
-    color: var(--accent-color);
+
+.visited-container {
+    width: 100%;
 }
 
-.results-container .score {
-    font-size: 1.2em;
-    margin: 15px 0;
-}
-
-.results-container .percentage {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-.results-container .message {
-    font-size: 1.3em;
-    font-weight: bold;
-    margin: 15px 0;
-    padding: 10px;
+.visited-id {
+    display: block;
+    box-sizing: border-box;
     border-radius: 4px;
-}
+    padding: 10px;
+    width: 100%;
 
-.results-container .message.excellent {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--background-color-1);
 }
-
-.results-container .message.good {
-    background-color: #8BC34A;
-    color: white;
-}
-
-.results-container .message.okay {
-    background-color: #FFC107;
-    color: var(--text-color-1);
-}
-
-.results-container .message.needs-improvement {
-    background-color: #FF5722;
-    color: white;
-}
-
-.correct-answer {
-    color: var(--test);
-    font-weight: bold;
-    margin: 10px 0;
-} */
