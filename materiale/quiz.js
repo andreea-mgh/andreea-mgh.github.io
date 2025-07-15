@@ -44,14 +44,14 @@ function showResults(correctAnswers, totalQuestions) {
 
 
 const params = new URLSearchParams(window.location.search);
-const quizId = params.get("code").toUpperCase();
+const quizId = params.get("code");
 
 if (quizId) {
     fetch(`/materiale/test.json`)
         .then(response => response.json())
         .then(data => {
             const quizContainer = document.querySelector('.quiz-container');
-            const quiz = data.find(q => q.cod === quizId);
+            const quiz = data.find(q => q.cod.toUpperCase() === quizId.toUpperCase());
             if (quiz) {
                 quizContainer.innerHTML = `<h1>${quiz.title}</h1><p>${quiz.description}</p>`;
                 
@@ -114,7 +114,7 @@ if (quizId) {
 
                 loadingMessage.remove();
             } else {
-                quizContainer.innerHTML = '<p>Quiz not found.</p>';
+                quizContainer.innerHTML = '<p>Cod greșit :(</p>';
             }
         })
         .catch(error => console.error('Error loading quiz:', error));
