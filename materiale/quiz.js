@@ -48,7 +48,7 @@ if (quizId) {
                                 submitButton.textContent = 'Greșit!';
                                 const correctAnswer = question.options[question.answer];
                                 const correctText = document.createElement('p');
-                                correctText.textContent = `Răspunsul corect este: ${correctAnswer}`;
+                                correctText.innerHTML = `Răspunsul corect este: ${correctAnswer}`;
                                 correctText.classList.add('correct-answer');
                                 submitButton.parentElement.appendChild(correctText);
                             }
@@ -60,36 +60,7 @@ if (quizId) {
                         }
                     });
                 });
-                // const submitButtons = document.querySelectorAll('.submit-answer');
-                // submitButtons.forEach(button => {
-                //     button.addEventListener('click', () => {
-                //         const questionIndex = button.getAttribute('data-index');
-                //         const selectedOption = document.querySelector(`input[name="question${questionIndex}"]:checked`);
-                //         if (selectedOption) {
-                //             const answerIndex = parseInt(selectedOption.value);
-                //             const question = quiz.questions[questionIndex];
-                //             if (answerIndex === question.answer) {
-                //                 button.classList.add('correct');
-                //                 button.textContent = 'Corect!';
-                //             } else {
-                //                 button.classList.add('incorrect');
-                //                 button.textContent = 'Greșit!';
-                //                 const correctAnswer = question.options[question.answer];
-                //                 const correctText = document.createElement('p');
-                //                 correctText.textContent = `Răspunsul corect este: ${correctAnswer}`;
-                //                 correctText.classList.add('correct-answer');
-                //                 button.parentElement.appendChild(correctText);
-                                
-                //             }
-                //             const explanation = button.nextElementSibling;
-                //             explanation.style.display = 'block';
-                //             button.disabled = true;
-                //         } else {
-                //             alert('Please select an answer.');
-                //         }
-                //     });
-                // });
-
+                
                 loadingMessage.remove();
             } else {
                 quizContainer.innerHTML = '<p>Quiz not found.</p>';
