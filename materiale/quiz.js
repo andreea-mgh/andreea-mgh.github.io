@@ -2,6 +2,9 @@ const deleteOnLoad = document.getElementById("#deleteonload");
 if (deleteOnLoad) {
     deleteOnLoad.remove();
 }
+const loadingMessage = document.createElement('p');
+loadingMessage.textContent = 'Se încarcă...';
+document.querySelector('.quiz-container').appendChild(loadingMessage);
 
 const params = new URLSearchParams(window.location.search);
 const quizId = params.get("code");
@@ -13,8 +16,12 @@ if (quizId) {
             const quizContainer = document.querySelector('.quiz-container');
             const quiz = data.find(q => q.cod === quizId);
             if (quiz) {
-                quizContainer.innerHTML = `<h2>${quiz.title}</h2><p>${quiz.description}</p>`;
+                quizContainer.innerHTML = `<h1>${quiz.title}</h1><p>${quiz.description}</p>`;
                 quiz.questions.forEach((question, index) => {
+                    const questionContainer = document.createElement('div');
+                    questionContainer.classList.add('question-container');
+                    quizContainer.appendChild(questionContainer);
+
                     const questionHtml = `
                         <hr>
                         <div class="question">
@@ -26,37 +33,64 @@ if (quizId) {
                             <p class="explanation" style="display:none;">${question.explanation}</p>
                         </div>
                     `;
-                    quizContainer.innerHTML += questionHtml;
-                });
-                const submitButtons = document.querySelectorAll('.submit-answer');
-                submitButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const questionIndex = button.getAttribute('data-index');
-                        const selectedOption = document.querySelector(`input[name="question${questionIndex}"]:checked`);
+                    questionContainer.innerHTML = questionHtml;
+
+                    const submitButton = questionContainer.querySelector('.submit-answer');
+                    submitButton.addEventListener('click', () => {
+                        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
                         if (selectedOption) {
                             const answerIndex = parseInt(selectedOption.value);
-                            const question = quiz.questions[questionIndex];
                             if (answerIndex === question.answer) {
-                                button.classList.add('correct');
-                                button.textContent = 'Corect!';
+                                submitButton.classList.add('correct');
+                                submitButton.textContent = 'Corect!';
                             } else {
-                                button.classList.add('incorrect');
-                                button.textContent = 'Greșit!';
+                                submitButton.classList.add('incorrect');
+                                submitButton.textContent = 'Greșit!';
                                 const correctAnswer = question.options[question.answer];
                                 const correctText = document.createElement('p');
                                 correctText.textContent = `Răspunsul corect este: ${correctAnswer}`;
                                 correctText.classList.add('correct-answer');
-                                button.parentElement.appendChild(correctText);
-                                
+                                submitButton.parentElement.appendChild(correctText);
                             }
-                            const explanation = button.nextElementSibling;
+                            const explanation = submitButton.nextElementSibling;
                             explanation.style.display = 'block';
-                            button.disabled = true;
+                            submitButton.disabled = true;
                         } else {
                             alert('Please select an answer.');
                         }
                     });
                 });
+                // const submitButtons = document.querySelectorAll('.submit-answer');
+                // submitButtons.forEach(button => {
+                //     button.addEventListener('click', () => {
+                //         const questionIndex = button.getAttribute('data-index');
+                //         const selectedOption = document.querySelector(`input[name="question${questionIndex}"]:checked`);
+                //         if (selectedOption) {
+                //             const answerIndex = parseInt(selectedOption.value);
+                //             const question = quiz.questions[questionIndex];
+                //             if (answerIndex === question.answer) {
+                //                 button.classList.add('correct');
+                //                 button.textContent = 'Corect!';
+                //             } else {
+                //                 button.classList.add('incorrect');
+                //                 button.textContent = 'Greșit!';
+                //                 const correctAnswer = question.options[question.answer];
+                //                 const correctText = document.createElement('p');
+                //                 correctText.textContent = `Răspunsul corect este: ${correctAnswer}`;
+                //                 correctText.classList.add('correct-answer');
+                //                 button.parentElement.appendChild(correctText);
+                                
+                //             }
+                //             const explanation = button.nextElementSibling;
+                //             explanation.style.display = 'block';
+                //             button.disabled = true;
+                //         } else {
+                //             alert('Please select an answer.');
+                //         }
+                //     });
+                // });
+
+                loadingMessage.remove();
             } else {
                 quizContainer.innerHTML = '<p>Quiz not found.</p>';
             }

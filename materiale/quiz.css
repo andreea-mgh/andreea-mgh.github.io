@@ -30,6 +30,11 @@ h1, h2 {
     color: var(--accent-color);
 }
 
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
 .quiz-container {
     max-width: 600px;
     padding: 20px;
@@ -85,10 +90,12 @@ button {
 
 button.correct {
     background-color: #4CAF50;
+    cursor: default;
 }
 
 button.incorrect {
     background-color: #d56447;
+    cursor: default;
 }
 
 hr {
