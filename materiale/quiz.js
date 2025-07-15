@@ -44,7 +44,7 @@ function showResults(correctAnswers, totalQuestions) {
 
 
 const params = new URLSearchParams(window.location.search);
-const quizId = params.get("code");
+const quizId = params.get("code").toUpperCase();
 
 if (quizId) {
     fetch(`/materiale/test.json`)
