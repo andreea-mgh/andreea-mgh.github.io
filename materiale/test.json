@@ -61,5 +61,23 @@
             }
         ]
 
+    },
+    {
+        "cod": "QZILRECAP",
+        "title": "Recapitulare Lua",
+        "description": "",
+        "questions": [
+            {
+                "question" : "Ce face codul următor?<div class='code-block'>local lista_cu_numere = {2, 3, 4, 5, 8, 12, 15, 17, 20}<br>local suma = 0<br><br>for _,nr in ipairs(lista_cu_numere) do<br>    if nr % 2 == 0 then<br>        suma = suma + nr<br>    end<br>end<br><br>print(suma)</div>",
+                "options" :[
+                    "afișează suma numerelor din listă",
+                    "afișează suma numerelor impare din listă",
+                    "afișează suma numerelor pare din listă",
+                    "afișează toate numerele din listă"
+                ],
+                "answer":2,
+                "explanation": "În bucla <span class=\"code-inline\">for</span> se ia fiecare număr și se adună la variabila <span class=\"code-inline\">suma</span> dacă îndeplinește condiția nr%2==0 (nr e par)."
+            }
+        ]
     }
 ]
