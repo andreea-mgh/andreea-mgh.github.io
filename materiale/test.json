@@ -77,6 +77,39 @@
                 ],
                 "answer":2,
                 "explanation": "În bucla <span class=\"code-inline\">for</span> se ia fiecare număr și se adună la variabila <span class=\"code-inline\">suma</span> dacă îndeplinește condiția nr%2==0 (nr e par)."
+            },
+            {
+                "question":"Pentru a afișa cel mai mic număr dintr-o listă <span class=\"code-inline\">numbers</span>, ce trebuie completat în locul ...?<div class=\"code-block\">local minim = numbers[1]<br><br>for _,nr in ipairs(numbers) do<br>    if ... then<br>        minim = nr<br>    end<br>end<br><br>print(minim)</div>",
+                "options":[
+                    "<span class=\"code-inline\">nr < minim</span>",
+                    "<span class=\"code-inline\">nr == minim</span>",
+                    "<span class=\"code-inline\">nr != minim</span>",
+                    "<span class=\"code-inline\">nr > minim</span>"
+                ],
+                "answer":0,
+                "explanation":"Când căutăm valoarea minimă și maximă, verificăm dacă fiecare număr e mai mic, respectiv mai mare, decât minimul sau maximul precedent."
+            },
+            {
+                "question":"Ce face codul următor?<div class=\"code-block\">print(\"scrie un numar:\")<br>local numar = io.read()<br><br>while not tonumber(numar) do<br>    print(\"scrie un numar:\")<br>    numar = io.read()<br>end<br></div>",
+                "options":[
+                    "te pune să scrii un număr și se oprește dacă scrii ceva ce nu e un număr",
+                    "te pune să scrii un număr și se oprește indiferent de ce scrii",
+                    "te pune să scrii un număr la infinit",
+                    "te pune să scrii un număr până scrii un număr valid"
+                ],
+                "answer":3,
+                "explanation":"Bucla se oprește numai când valoarea stocată în variabila <span class=\"code-inline\">numar</span> este într-adevăr un număr. Când folosim funcția  <span class=\"code-inline\">tonumber()</span> cu valori care nu sunt numere, rezultatul funcției e mereu <span class=\"code-inline\">nul</span>."
+            },
+            {
+                "question":"Ce linie ar trebui schimbată ca să facem codul să ruleze?<div class=\"code-block\">function suma_gauss(n)<br>    local s = 0<br>    for i=1,n,1 do<br>        s = s + i<br>    end<br>    return s<br>end<br><br>print(suma_gauss())</div>",
+                "options":[
+                    "<span class=\"code-inline\">print(suma_gauss())</span>",
+                    "<span class=\"code-inline\">function suma_gauss(n)</span>",
+                    "<span class=\"code-inline\">return s</span>",
+                    "codul merge bine!!!"
+                ],
+                "answer":0,
+                "explanation":"Funcția are nevoie de un număr (parametrul n). Putem face codul să meargă schimbând, de exemplu, ultima linie cu <span class=\"code-inline\">print(suma_gauss(10))</span> pentru a calcula suma primelor 10 numere."
             }
         ]
     }
